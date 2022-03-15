@@ -20,7 +20,8 @@ body {
     display: grid;
     grid-template-areas: "sidebar topbar"
                         "sidebar content";
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr auto;
 }
 
 #sidebar {
@@ -47,56 +48,137 @@ body {
 #topbar {
     grid-area: topbar;
 }
-#searchbar {
-    display: flex;
-    flex-direction: row;
-}
 
 /* Search bar */
+#searchbar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
 #searchbar > input { 
     flex: 1;
+    background-color: #cfdae2;
+    margin-left: 10px;
+    margin-right: 100px;
+    border: none;
+    appearance: none;
+    outline: none;
+    border-radius: 99em;
+    height: 32px;
 }
 
-#searchbar:nth-child(3) {
-    margin-left: 30px;
+#searchbar > img {
+    border-radius: 99em;
+    margin-left: 15px;
+    margin-right: 15px;
 
 }
-
+#searchbar > p {
+    font-weight: 800;
+}
 #admininfo {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 20px;
 }
 
 #admininfo > div {
 flex: 1;
+font-weight: 700;
+}
+#admininfo > div > span {
+    font-size: 24px;
+
 }
 
+#admininfo > img {
+    border-radius: 50%;
+    margin-left: 40px;
+    margin-right: 15px;
+
+}
+
+#admininfo > button {
+    background-color: #7e0d74;
+    color: white;
+    padding: 10px 15px 10px 15px;
+    margin-left: 20px;
+    border-radius: 99em;
+    font-size: 16px;
+    font-weight: 800;
+
+    border: none;
+    appearance: none;
+    outline: none;
+
+}
 #content {
     display: grid;
-    grid-template-areas: "cards announcements"
-                         "cards trending";
+    grid-template-areas: "cards cards"
+                         "cards cards";
     grid-template-columns: 2fr 1fr;
+    background-color: rgb(221, 222, 223);
+    gap: 20px;
+
                         }
-    
 
-#cards {
-    grid-area: content;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px;
-    grid-area: cards;
-
-}
-
-#announcements {
-    grid-area: announcements;
-}
 
 #trending {
     grid-area: trending;
 }
+#cards {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    grid-area: cards;
+    padding-top: 40px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
 .card {
+    background-color: white;
+    height: 225px;
+    border-left: 6px solid rgb(50, 20, 133);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+    
+}
+
+.icons {
+    padding-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+    color: rgb(80, 80, 80);
 
 }
 
+.icons > svg {
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.cardheader {
+    font-size: 1.21rem;
+    font-weight: bold;
+}
+
+.cardcontent {
+    font-size: 0.86rem;
+    color: rgb(80, 80, 80);
+}
 
